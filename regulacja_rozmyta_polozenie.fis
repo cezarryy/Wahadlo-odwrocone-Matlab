@@ -1,0 +1,69 @@
+[System]
+Name='regulacja_rozmyta_polozenie'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='u'
+Range=[-1.5 1.5]
+NumMFs=5
+MF1='DU':'trimf',[-2.702 -1.5 -0.4]
+MF2='MU':'trimf',[-1.5 -0.4 0]
+MF3='MD':'trimf',[0 0.4 1.5]
+MF4='0':'trimf',[-0.4 0 0.4]
+MF5='DD':'trimf',[0.4 1.5 3]
+
+[Input2]
+Name='du'
+Range=[-0.075 0.075]
+NumMFs=5
+MF1='DU':'trimf',[-0.1125 -0.075 -0.0175]
+MF2='MU':'trimf',[-0.075 -0.0175 0]
+MF3='0':'trimf',[-0.0175 0 0.0175]
+MF4='MD':'trimf',[1.388e-17 0.0175 0.075]
+MF5='DD':'trimf',[0.0175 0.075 0.1125]
+
+[Output1]
+Name='F'
+Range=[-1.63 1.63]
+NumMFs=5
+MF1='DU':'trimf',[-2.445 -1.63 -0.815]
+MF2='MU':'trimf',[-1.63 -0.815 0]
+MF3='0':'trimf',[-0.815 0 0.815]
+MF4='MD':'trimf',[0 0.815 1.63]
+MF5='DD':'trimf',[0.815 1.63 2.445]
+
+[Rules]
+1 1, 5 (1) : 1
+1 2, 5 (1) : 1
+1 3, 5 (1) : 1
+1 4, 4 (1) : 1
+1 5, 3 (1) : 1
+2 1, 5 (1) : 1
+2 2, 5 (1) : 1
+2 3, 4 (1) : 1
+2 4, 3 (1) : 1
+2 5, 2 (1) : 1
+3 1, 4 (1) : 1
+3 2, 3 (1) : 1
+3 3, 2 (1) : 1
+3 4, 1 (1) : 1
+3 5, 1 (1) : 1
+4 1, 5 (1) : 1
+4 2, 4 (1) : 1
+4 3, 3 (1) : 1
+4 4, 2 (1) : 1
+4 5, 1 (1) : 1
+5 5, 1 (1) : 1
+5 4, 1 (1) : 1
+5 3, 1 (1) : 1
+5 2, 2 (1) : 1
+5 1, 3 (1) : 1
